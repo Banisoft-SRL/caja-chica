@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                     color: Theme.of(context).primaryColor,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const <Widget>[Text('LOGIN', style: TextStyle(color: Colors.white, fontSize: 18 ),
+                      children: const <Widget>[Text('LOGIn', style: TextStyle(color: Colors.white, fontSize: 18 ),
                       ),
                       ],
                     ),
