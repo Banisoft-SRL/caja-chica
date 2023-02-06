@@ -13,8 +13,7 @@ class _TransactionsListStatedos extends State<TransactionsListdos> {
     return Card(
       shadowColor: Colors.grey,
       elevation: 3,
-      child: Container(
-          child: ListTile(
+      child: ListTile(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
@@ -48,7 +47,7 @@ class _TransactionsListStatedos extends State<TransactionsListdos> {
             )
           ],
         ),
-      )),
+      ),
     );
   }
 }

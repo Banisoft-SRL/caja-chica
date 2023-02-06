@@ -1,8 +1,6 @@
 import 'package:caja_chica/main.dart';
 import 'package:flutter/material.dart';
 
-void List() => runApp(MaterialApp());
-
 class ListPage extends StatefulWidget {
   ListPage({Key? key}) : super(key: key);
   _ListPageState createState() => _ListPageState();
