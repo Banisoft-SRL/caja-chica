@@ -1,3 +1,4 @@
+import 'package:caja_chica/src/UI/pages/CrearDesembolso.dart';
 import 'package:flutter/material.dart';
 
 import '../TransactionsList.dart';
@@ -12,6 +13,7 @@ class ListadoDesembolso extends StatefulWidget {
 
 class _ListadoDesembolsoState extends State<ListadoDesembolso> {
   bool isScrolled = true;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -232,7 +234,22 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
       //Boton de la esquina inferior derecha de crear factura .
 
       floatingActionButton: FloatingActionButton.extended(
-          onPressed: () => null,
+          onPressed: () => showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                backgroundColor: Colors.transparent,
+                builder: (context) => Container(
+                  height: MediaQuery.of(context).size.height * 0.92,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25.0),
+                      topRight: Radius.circular(25.0),
+                    ),
+                  ),
+                  child: CrearDesembolso(),
+                ),
+              ),
           label: const Text('Crear desembolso'),
           icon: const Icon(Icons.add),
           backgroundColor: Colors.black),
