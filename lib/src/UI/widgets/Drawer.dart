@@ -90,7 +90,7 @@ class _DrawerListState extends State<DrawerList> {
                   ],
                 ),
               ),
-              onTap: () {},
+              onTap: () => {},
             ),
             GestureDetector(
               child: Container(
@@ -103,6 +103,24 @@ class _DrawerListState extends State<DrawerList> {
                     Icon(Icons.stacked_bar_chart, size: 20),
                     Text(
                       ' Estadisticas de desembolsos',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
+              ),
+              onTap: () {},
+            ),
+            GestureDetector(
+              child: Container(
+                margin: const EdgeInsets.only(top: 2),
+                padding: const EdgeInsets.all(20),
+                width: double.infinity,
+                color: Colors.grey[200],
+                child: Row(
+                  children: const <Widget>[
+                    Icon(Icons.print, size: 20),
+                    Text(
+                      ' Imprimir',
                       style: TextStyle(fontSize: 16),
                     ),
                   ],
