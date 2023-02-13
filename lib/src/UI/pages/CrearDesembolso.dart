@@ -8,24 +8,40 @@ class CrearDesembolso extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: false,
       appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: const Text(
-            'Crear Desembolso',
-            style: TextStyle(
-                color: Colors.black54,
-                fontFamily: 'Greze',
-                fontWeight: FontWeight.w500,
-                fontSize: 20),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Row(children: const [
+          SizedBox(
+            width: 10,
+            height: 20,
           ),
-          centerTitle: true,
-          leading: IconButton(
-            icon: const Icon(
-              Icons.expand_more_rounded,
-              size: 40,
-              color: Colors.black,
+          CircleAvatar(
+            backgroundColor: Color.fromRGBO(255, 210, 101, 600),
+            radius: 17,
+            child: Icon(
+              Icons.create,
+              size: 20,
+              color: Colors.orange,
             ),
-            onPressed: () => Navigator.pop(context),
-          )),
+          ),
+          SizedBox(
+            width: 6,
+          ),
+          Text(
+            'Crear Desembolso',
+            style: TextStyle(color: Colors.black),
+          )
+        ]),
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.expand_more_rounded,
+            size: 40,
+            color: Colors.black,
+          ),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: SingleChildScrollView(
         physics: const ScrollPhysics(),
         child: Padding(
@@ -34,7 +50,7 @@ class CrearDesembolso extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               const SizedBox(
-                height: 20,
+                height: 35,
               ),
               GestureDetector(
                 onTap: null,
@@ -109,7 +125,7 @@ class CrearDesembolso extends StatelessWidget {
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     label: Text('NCF'),
-                    prefixIcon: Icon(Icons.perm_identity),
+                    prefixIcon: Icon(Icons.receipt_long_rounded),
                   ),
                 ),
               ),
@@ -142,7 +158,20 @@ class CrearDesembolso extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 15,
+                height: 10,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    label: Text('Proyecto'),
+                    prefixIcon: Icon(Icons.account_tree_outlined),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
               ),
               Row(
                 mainAxisSize: MainAxisSize.min,
@@ -169,9 +198,16 @@ class CrearDesembolso extends StatelessWidget {
                         prefixIcon: Icon(Icons.edit_note),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
+              SizedBox(
+                height: 25,
+              ),
+              FloatingActionButton.extended(
+                  onPressed: () => Navigator.pop(context),
+                  label: const Text('  Save Disbursement  '),
+                  backgroundColor: Colors.black),
             ],
           ),
         ),
