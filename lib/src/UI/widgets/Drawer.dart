@@ -1,4 +1,5 @@
 import 'package:caja_chica/main.dart';
+import 'package:caja_chica/src/UI/pages/Login.dart';
 import 'package:flutter/material.dart';
 
 class DrawerList extends StatefulWidget {
@@ -132,18 +133,21 @@ class _DrawerListState extends State<DrawerList> {
               ),
             ),
             Expanded(child: Container()),
-            Container(
-              margin: const EdgeInsets.only(top: 2),
-              padding: const EdgeInsets.all(20),
-              width: double.infinity,
-              color: Colors.black,
-              alignment: Alignment.center,
-              child: const Text(
-                'Sign out',
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            GestureDetector(
+              child: Container(
+                margin: const EdgeInsets.only(top: 2),
+                padding: const EdgeInsets.all(20),
+                width: double.infinity,
+                color: Colors.black,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Sign out',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
+              onTap: () => LoginPage(),
+            )
           ],
         ),
       ),
