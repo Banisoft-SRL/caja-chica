@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class CrearDesembolso extends StatelessWidget {
   const CrearDesembolso({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var maskFormatter = MaskTextInputFormatter(
+        mask: '###-#####-#', filter: {"#": RegExp(r'[0-9]')});
+
+    var Formatter = MaskTextInputFormatter(
+        mask: 'B## ########', filter: {"#": RegExp(r'[0-9]')});
+
     return Scaffold(
       extendBodyBehindAppBar: false,
       appBar: AppBar(
@@ -55,12 +62,25 @@ class CrearDesembolso extends StatelessWidget {
               GestureDetector(
                 onTap: null,
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Container(
                     height: 50,
+                    width: 400,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey, width: 1.0),
                       borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: const [
+                          Icon(Icons.date_range_outlined),
+                          Text(
+                            'Fecha',
+                            style: TextStyle(color: Colors.black38),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -74,12 +94,14 @@ class CrearDesembolso extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: TextField(
-                  decoration: InputDecoration(
+                  inputFormatters: [maskFormatter],
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    label: Text('Cedula/RNC'),
+                    label: Text('RNC'),
                     prefixIcon: Icon(Icons.perm_identity_sharp),
                   ),
                 ),
@@ -97,7 +119,7 @@ class CrearDesembolso extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.45,
+                    width: MediaQuery.of(context).size.width * 0.44,
                     child: const TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
@@ -109,7 +131,7 @@ class CrearDesembolso extends StatelessWidget {
                     width: 10,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.45,
+                    width: MediaQuery.of(context).size.width * 0.44,
                     child: const TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
@@ -119,10 +141,11 @@ class CrearDesembolso extends StatelessWidget {
                   )
                 ],
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: TextField(
-                  decoration: InputDecoration(
+                  inputFormatters: [Formatter],
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     label: Text('NCF'),
                     prefixIcon: Icon(Icons.receipt_long_rounded),
@@ -133,8 +156,9 @@ class CrearDesembolso extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.45,
+                    width: MediaQuery.of(context).size.width * 0.44,
                     child: const TextField(
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         label: Text('Monto'),
@@ -146,8 +170,9 @@ class CrearDesembolso extends StatelessWidget {
                     width: 10,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.45,
+                    width: MediaQuery.of(context).size.width * 0.44,
                     child: const TextField(
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         label: Text('Impuestos'),
@@ -192,6 +217,7 @@ class CrearDesembolso extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.45,
                     child: const TextField(
+                      keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         label: Text('Referencia'),
@@ -201,7 +227,7 @@ class CrearDesembolso extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               FloatingActionButton.extended(

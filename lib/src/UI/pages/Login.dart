@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                             builder: (context) => const ListadoDesembolso(),
                           )),
                       padding: const EdgeInsets.symmetric(vertical: 15),
-                      color: Theme.of(context).primaryColor,
+                      color: Colors.black,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const <Widget>[
