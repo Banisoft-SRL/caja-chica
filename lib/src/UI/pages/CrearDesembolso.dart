@@ -144,7 +144,6 @@ class CrearDesembolso extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
-                  keyboardType: TextInputType.number,
                   inputFormatters: [Formatter],
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
