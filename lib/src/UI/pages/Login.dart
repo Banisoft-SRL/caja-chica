@@ -62,9 +62,9 @@ class _LoginPageState extends State<LoginPage> {
         ),
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            leading: const Icon(Icons.settings)),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
         body: Stack(
           children: [
             Container(
@@ -126,15 +126,15 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       MaterialButton(
                         onPressed: () async {
-                          await cubit.login("dgarcia", "65");
-                          // Navigator.pushReplacement(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //       builder: (context) => const ListadoDesembolso(),
-                          //     ));
+                          // await cubit.login("dgarcia", "65");
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ListadoDesembolso(),
+                              ));
                         },
                         padding: const EdgeInsets.symmetric(vertical: 15),
-                        color: Theme.of(context).primaryColor,
+                        color: Colors.black,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const <Widget>[

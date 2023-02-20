@@ -1,5 +1,6 @@
 import 'package:caja_chica/main.dart';
 import 'package:caja_chica/src/UI/pages/Login.dart';
+import 'package:caja_chica/src/UI/widgets/Ajustes_usuario.dart';
 import 'package:flutter/material.dart';
 
 class DrawerList extends StatefulWidget {
@@ -117,20 +118,23 @@ class _DrawerListState extends State<DrawerList> {
             const SizedBox(
               height: 9,
             ),
-            Container(
-              margin: const EdgeInsets.only(top: 2),
-              padding: const EdgeInsets.all(20),
-              width: double.infinity,
-              color: Colors.grey[200],
-              child: Row(
-                children: const <Widget>[
-                  Icon(Icons.settings_suggest, size: 23),
-                  Text(
-                    ' Ajustes',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
+            GestureDetector(
+              child: Container(
+                margin: const EdgeInsets.only(top: 2),
+                padding: const EdgeInsets.all(20),
+                width: double.infinity,
+                color: Colors.grey[200],
+                child: Row(
+                  children: const <Widget>[
+                    Icon(Icons.settings_suggest, size: 23),
+                    Text(
+                      ' Ajustes',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
               ),
+              onTap: () => AjusteUsuario(),
             ),
             Expanded(child: Container()),
             GestureDetector(

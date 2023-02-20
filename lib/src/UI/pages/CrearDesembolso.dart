@@ -233,7 +233,7 @@ class CrearDesembolso extends StatelessWidget {
               ),
               FloatingActionButton.extended(
                   onPressed: () => Navigator.pop(context),
-                  label: const Text('Guardar'),
+                  label: const Text('      Guardar      '),
                   backgroundColor: Colors.black),
             ],
           ),
