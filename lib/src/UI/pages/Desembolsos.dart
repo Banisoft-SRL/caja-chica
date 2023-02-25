@@ -25,7 +25,6 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
     );
 
     if (result != null) {
-      // Rebuild the UI
       print(result.start.toString());
       setState(() {
         _selectedDateRange = result;
