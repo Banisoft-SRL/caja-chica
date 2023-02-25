@@ -13,8 +13,9 @@ class ListadoDesembolso extends StatefulWidget {
 class _ListadoDesembolsoState extends State<ListadoDesembolso> {
   bool isScrolled = true;
 
-  DateTimeRange? _selectedDateRange;
+  //Configuracion del botton de fecha
 
+  DateTimeRange? _selectedDateRange;
   void _show() async {
     final DateTimeRange? result = await showDateRangePicker(
       context: context,
@@ -31,6 +32,8 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
       });
     }
   }
+
+  //Inicio
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +60,9 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
                       MaterialPageRoute(builder: (context) => AjusteUsuario()));
                 },
                 icon: const Icon(Icons.settings)),
+
+            //Menu de los estados de desembolso
+
             PopupMenuButton(
                 itemBuilder: (context) => [
                       PopupMenuItem(
@@ -110,6 +116,9 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
                     ])
           ],
         ),
+
+        //Datos y FILTROS de los desembolsos
+
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -135,7 +144,11 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
                       color: Colors.orange,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Row(
+                    child:
+
+                        //MONTO O BALANCE DISPONIBLE EN LA CAJA CHICA
+
+                        Row(
                       children: const [
                         Icon(Icons.monetization_on),
                         Text(
@@ -155,6 +168,8 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
                 height: 15,
                 width: 10,
               ),
+
+              //fechas filtradas
 
               Row(
                 children: [
@@ -210,6 +225,8 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
                 ],
               ),
 
+              //Button de Buscar
+
               const SizedBox(
                 height: 10,
               ),
@@ -229,7 +246,7 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
                 height: 20,
               ),
 
-              //Espacio de color gris donde estaran los datos de la facturas
+              //LISTADO de todos los desembolsos
 
               Expanded(
                 flex: 20,
@@ -274,7 +291,7 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
           ),
         ),
 
-        //Boton de la esquina inferior derecha de crear factura .
+        //Boton negro de la esquina inferior derecha de crear factura .
 
         floatingActionButton: FloatingActionButton.extended(
             onPressed: () => showModalBottomSheet(
@@ -296,10 +313,6 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
             label: const Text('Crear desembolso'),
             icon: const Icon(Icons.add),
             backgroundColor: Colors.black),
-
-        //DRAWER = Menu donde estan las opsiones (Inicio, Facturas, Balance_disponible, Sincronizar, Ajustes.)
-
-        //drawer: const DrawerList(),
       ),
     );
   }
