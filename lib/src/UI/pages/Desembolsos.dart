@@ -13,6 +13,25 @@ class ListadoDesembolso extends StatefulWidget {
 class _ListadoDesembolsoState extends State<ListadoDesembolso> {
   bool isScrolled = true;
 
+  DateTimeRange? _selectedDateRange;
+
+  void _show() async {
+    final DateTimeRange? result = await showDateRangePicker(
+      context: context,
+      firstDate: DateTime(2022, 1, 1),
+      lastDate: DateTime(2030, 12, 31),
+      currentDate: DateTime.now(),
+      saveText: 'Guardar',
+    );
+
+    if (result != null) {
+      print(result.start.toString());
+      setState(() {
+        _selectedDateRange = result;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,7 +47,7 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
               width: 10,
             ),
             IconButton(
-                onPressed: () {}, icon: const Icon(Icons.calendar_month)),
+                icon: const Icon(Icons.calendar_month), onPressed: _show),
             const SizedBox(
               width: 10,
             ),
@@ -155,14 +174,15 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Row(
-                        children: const [
-                          Icon(
+                        children: [
+                          const Icon(
                             Icons.date_range_outlined,
                             color: Colors.white,
                           ),
                           Text(
-                            ' 25/1/2023',
-                            style: TextStyle(color: Colors.white),
+                            " ${_selectedDateRange?.start.toString().split(' ')[0]}",
+                            style: const TextStyle(
+                                fontSize: 15, color: Colors.white),
                           ),
                         ],
                       )),
@@ -175,15 +195,15 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
-                      children: const [
-                        Icon(
+                      children: [
+                        const Icon(
                           Icons.date_range_outlined,
                           color: Colors.white,
                         ),
                         Text(
-                          ' 25/1/2023',
-                          style: TextStyle(color: Colors.white),
-                        ),
+                            " ${_selectedDateRange?.end.toString().split(' ')[0]}",
+                            style: const TextStyle(
+                                fontSize: 15, color: Colors.white))
                       ],
                     ),
                   ),
