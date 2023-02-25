@@ -126,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       MaterialButton(
                         onPressed: () async {
-                          // await cubit.login("dgarcia", "65");
+                          await cubit.login("dgarcia", "65");
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(

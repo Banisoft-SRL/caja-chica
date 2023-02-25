@@ -1,5 +1,7 @@
+import 'package:caja_chica/src/UI/pages/Desembolsos.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class AjusteUsuario extends StatefulWidget {
   const AjusteUsuario({Key? key}) : super(key: key);
@@ -9,8 +11,11 @@ class AjusteUsuario extends StatefulWidget {
 }
 
 class _AjusteUsuarioState extends State<AjusteUsuario> {
+  bool isLoading = true;
   @override
   Widget build(BuildContext context) {
+    var maskFormatter =
+        MaskTextInputFormatter(mask: '#####', filter: {"#": RegExp(r'[0-9]')});
     return Scaffold(
       extendBodyBehindAppBar: false,
       appBar: AppBar(
@@ -18,7 +23,7 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
         elevation: 0,
         title: Row(children: const [
           SizedBox(
-            width: 60,
+            width: 50,
             height: 20,
           ),
           Center(
@@ -41,21 +46,40 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
           )
         ]),
         centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.done,
-            size: 36,
+        leading: BackButton(
             color: Colors.black,
-          ),
-          onPressed: () => Navigator.pop(context),
-        ),
+            onPressed: () async {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ListadoDesembolso(),
+                  ));
+            }),
+        actions: [
+          IconButton(
+              icon: const Icon(
+                Icons.done,
+                size: 36,
+                color: Colors.black,
+              ),
+              onPressed: () async {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ListadoDesembolso(),
+                    ));
+              }),
+          SizedBox(
+            width: 15,
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
               const SizedBox(
-                height: 30,
+                height: 10,
               ),
               const Text(
                 'DATOS DE CONEXION REQUERIDOS',
@@ -65,7 +89,7 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
                     fontWeight: FontWeight.bold),
               ),
               const SizedBox(
-                height: 40,
+                height: 36,
               ),
               Row(
                 mainAxisSize: MainAxisSize.min,
@@ -118,9 +142,10 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.30,
                         height: 46.9,
-                        child: const TextField(
-                          keyboardType: TextInputType.text,
-                          decoration: InputDecoration(
+                        child: TextField(
+                          inputFormatters: [maskFormatter],
+                          keyboardType: TextInputType.number,
+                          decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             label: Text('e.j 8080'),
                           ),
@@ -141,8 +166,10 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
                 height: 40.0,
                 onPressed: () {},
                 color: Colors.green,
-                child: const Text('Probar conexión',
-                    style: TextStyle(color: Colors.white)),
+                child: const Text(
+                  'Comprobar Conexion',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
 
               // Titulo de Compañía & Usuarios
@@ -238,6 +265,34 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
                   ),
                   const SizedBox(
                     height: 10,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.90,
+                    height: 46.9,
+                    child: const TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        label: Text('e.j Miguel Mateo'),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(Icons.monetization_on_outlined),
+                      Text("  Cuenta Bancaria"),
+                      Text(
+                        ' (Requerido*)',
+                        style:
+                            TextStyle(color: Color.fromRGBO(251, 59, 59, 600)),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 7,
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.90,
