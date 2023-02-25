@@ -31,21 +31,31 @@ class SharedPreferenceService implements ICacheService {
   }
 
   @override
-  Future<TValue> get<TValue>(String key) {
+  Future<TValue?> get<TValue>(String key) async {
     if (key.isEmpty) {
       throw Exception("el parámetro Key no puede estar vació");
     }
     final type = IModelFactory.typeOf<TValue>().toString();
 
-    final types = {
-      "String": _instance.getString(key),
-      "int": _instance.getInt(key),
-      "double": _instance.getDouble(key),
-      "bool": _instance.getBool(key),
-      "List<String>": _instance.getStringList(key),
-    };
+    switch (type) {
+      case "String":
+        return _instance.getString(key) as TValue?;
 
-    return types[type] as Future<TValue>;
+      case "int":
+        return _instance.getInt(key) as TValue;
+
+      case "double":
+        return _instance.getDouble(key) as TValue;
+
+      case "bool":
+        return _instance.getBool(key) as TValue;
+
+      case "List<String>":
+        return _instance.getStringList(key) as TValue;
+
+      default:
+        return null;
+    }
   }
 
   @override
@@ -55,15 +65,27 @@ class SharedPreferenceService implements ICacheService {
     }
     final type = IModelFactory.typeOf<TValue>().toString();
 
-    final types = {
-      "String": await _instance.setString(key, value as String),
-      "int": await _instance.setInt(key, value as int),
-      "double": await _instance.setDouble(key, value as double),
-      "bool": await _instance.setBool(key, value as bool),
-      "List<String>": await _instance.setStringList(key, value as List<String>),
-    };
+    switch (type) {
+      case "String":
+        await _instance.setString(key, value as String);
+        break;
+      case "int":
+        await _instance.setInt(key, value as int);
+        break;
+      case "double":
+        await _instance.setDouble(key, value as double);
+        break;
+      case "bool":
+        await _instance.setBool(key, value as bool);
+        break;
+      case "List<String>":
+        await _instance.setStringList(key, value as List<String>);
+        break;
+      default:
+        return false;
+    }
 
-    return types[type] as Future<bool>;
+    return true;
   }
 
   @override
@@ -74,5 +96,5 @@ class SharedPreferenceService implements ICacheService {
     } catch (e) {
       return false;
     }
-  } 
+  }
 }

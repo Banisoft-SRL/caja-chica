@@ -1,0 +1,1699 @@
+{
+    "mfactrx": [{
+            "ColumnName": "factrx_numero",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": true,
+            "IsPrimaryKey": true
+        },
+        {
+            "ColumnName": "factrx_fecha",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admtco_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncrement": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_rnc",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccpg_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccpg_cantidad",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admmon_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admmon_tasa",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facpre_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_valor",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_total",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_pdescgral",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_descgral",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_pcargogral",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_cargogral",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_telef1",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_totimp",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_neto",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_pdesc",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxcdir_seq",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_totdesc",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_pcargos",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_totcargos",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxcdir_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccon_seq",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccon_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facvdr_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsuc_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_refer",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_valorfac",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "longitud",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "latitud",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admncf_serial",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }, {
+            "ColumnName": "factrx_modo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_tipo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+
+    ],
+    "madmsuc": [{
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsuc_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsuc_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsuc_direccion",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsuc_telefono",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invalm_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "mcxccte": [{
+            "ColumnName": "cxccte_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_refer",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccpg_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_rnc",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admtco_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facpre_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxcdir_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccon_seq",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccon_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_telef1",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxcdir_seq",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_longitud",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_latitud",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_limcred",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "has_change",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_descuento",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "mcxccpg": [{
+            "ColumnName": "cxccpg_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccpg_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccpg_tipo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccpg_cantidad",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "minvitm": [{
+            "ColumnName": "invitm_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invitm_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invitm_refer",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facimp_total",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invcos_exist",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invitm_refer2",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invgrp_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invfam_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invitm_perdesc",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "mfacpre": [{
+            "ColumnName": "facpre_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facpre_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invitm_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facpre_pcontado",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facpre_pminimo",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admuni_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facpre_principal",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facpre_perdec",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "madmtco": [{
+            "ColumnName": "admtco_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admtco_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admtco_impuestos",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "dfactrx": [{
+            "ColumnName": "factrx_numero",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_linea",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invitm_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invitm_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_cant",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_precio",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_valord",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_pimpd",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_impd",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_netod",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "UniqueId",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admuni_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_preciobr",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }, {
+            "ColumnName": "factrx_totald",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_pdescgrald",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_descgrald",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "madmcia": [{
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admcia_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admcia_siglas",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admcia_rnc",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admmon_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "hostname",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "port",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "madmusr": [{
+            "ColumnName": "admusr_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_password",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsuc_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_comision",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_perdesc",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_pordesc",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_codfac",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_cajero",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_idcajero",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_codseg",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facvdr_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cajtur_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "mcxctrx": [{
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facvdr_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxctrx_numero",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxctrx_refer",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxctrx_fechadoc",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxctrx_docum",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxctrx_vencim",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admtrx_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admtrx_origen",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxctrx_total",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxctrx_pend",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admmon_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admmon_tasa",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "mfacvdr": [{
+            "ColumnName": "facvdr_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facvdr_refer",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facvdr_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facvdr_nolimiteprecio",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facvdr_permitecambiarprecio",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "madmvis": [{
+            "ColumnName": "admvis_serial",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": true,
+            "IsPrimaryKey": true
+        },
+        {
+            "ColumnName": "admvis_fecha",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_razon",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_tipo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_status",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_cobro",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_fechaini",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_fechafin",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_comentario",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_numero",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_venta",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "longitud",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "latitud",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "madmraz": [{
+            "ColumnName": "admraz_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": true
+        },
+        {
+            "ColumnName": "admraz_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admraz_tipo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "mcxcant": [{
+            "ColumnName": "cxcant_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": true
+        },
+        {
+            "ColumnName": "cxcant_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxcant_antini",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxcant_antfin",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "mfacvis": [{
+            "ColumnName": "facvis_numero",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": true,
+            "IsPrimaryKey": true
+        },
+        {
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facvdr_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_razon",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_cobro",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_fecha",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_comentario",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "factrx_numero",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvis_venta",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facvis_latitud",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facvis_longitud",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "madmpar": [{
+            "ColumnName": "admpar_clase",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admpar_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admpar_seq",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admpar_descripcion",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsuc_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admpar_numerico",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admpar_double",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admpar_string",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admpar_boolean",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admpar_fecha",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "madmncf": [{
+            "ColumnName": "admncf_numero",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admncf_serial",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsuc_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admncf_serie",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admtco_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admncf_numini",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admncf_numfin",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admncf_ultnum",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admncf_fechaval",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+
+    ],
+    "meftrcb": [{
+            "ColumnName": "eftrcb_numero",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": true,
+            "IsPrimaryKey": true
+        },
+        {
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsuc_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admtrx_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admtrx_origen",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_docum",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_refer",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_fecha",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_fechadoc",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_recibde",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admmon_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admmon_tasa",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_montobr",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_monto",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_desc",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_descrip",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admmod_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftcbr_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_vrete",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_avance",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_tdeuda",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_tpendiente",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "deftrcb": [{
+            "ColumnName": "eftrcb_numero",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }, {
+            "ColumnName": "eftrcb_seq",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admtrx_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admtrx_origen",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }, {
+            "ColumnName": "eftrcb_master",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_docum",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_pdesc",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_desc",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_valor",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admmod_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_vrete",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftrcb_prete",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admmon_tasa",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admmon_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxctrx_pend",
+            "Type": "REAL",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "madmimg": [{
+            "ColumnName": "admimg_tabla",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admimg_master",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admimg_linea",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admimg_imagen",
+            "Type": "BLOB",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "api_config": [{
+            "ColumnName": "connection_id",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": true,
+            "IsPrimaryKey": true
+        },
+        {
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admcia_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsuc_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "facvdr_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "eftcbr_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admusr_codigo",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "hostname",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "port",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+
+    ],
+    "minvfam": [{
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invfam_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invfam_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+
+    ],
+    "minvgrp": [{
+            "ColumnName": "admcia_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invgrp_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invgrp_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invfam_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "minvmar": [{
+            "ColumnName": "invmar_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "invmar_nombre",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ],
+    "madmvisplan": [{
+            "ColumnName": "admvisplan_numero",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": true,
+            "IsPrimaryKey": true
+        },
+        {
+            "ColumnName": "admvisplan_startTime",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvisplan_endTime",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvisplan_fecha",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admvisplan_observacion",
+            "Type": "TEXT",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "cxccte_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        },
+        {
+            "ColumnName": "admsts_codigo",
+            "Type": "INTEGER",
+            "IsAutoIncremnet": false,
+            "IsPrimaryKey": false
+        }
+    ]
+
+
+}

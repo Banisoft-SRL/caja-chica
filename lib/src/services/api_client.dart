@@ -30,14 +30,19 @@ class ApiClient implements IAPiClient {
       throw Exception("Endpoint can't be empty");
     }
     try {
-      final serverAddress = await cacheService.get<String>(getServerAddress);
-      final serverPort = await cacheService.get<String>(getServerPort);
+      // validate if server address is reachable
+      if (!await Utils.checkIsHostIsReachable()) {
+        throw Exception("El servidor no está disponible.");
+      }
+
+      final server = await cacheService.get<String>(serverAddress);
 
       final response = await httpClient.get(
-          Utils.getUri(endpoint,
-              queryParameters: queryParameters,
-              serverAddress: serverAddress,
-              serverPort: serverPort),
+          Utils.getUri(
+            endpoint,
+            queryParameters: queryParameters,
+            serverAddress: server,
+          ),
           headers: Utils.handlerHeaders(token));
 
       var model =
@@ -55,6 +60,11 @@ class ApiClient implements IAPiClient {
   @override
   Future<ApiResponse<T>> postRequest<T>(String endpoint, dynamic body) async {
     var result = ApiResponse<T>();
+
+    // validate if server address is reachable
+    if (!await Utils.checkIsHostIsReachable()) {
+      throw Exception("El servidor no está disponible.");
+    }
 
     if (endpoint.isEmpty) {
       throw Exception("Endpoint can't be empty");
