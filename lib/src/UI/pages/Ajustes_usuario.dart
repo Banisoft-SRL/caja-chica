@@ -1,5 +1,6 @@
+import 'package:caja_chica/src/UI/blocs/user_settings/user_settings_cubit.dart';
 import 'package:caja_chica/src/UI/pages/Desembolsos.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:caja_chica/src/di_container.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
@@ -11,6 +12,24 @@ class AjusteUsuario extends StatefulWidget {
 }
 
 class _AjusteUsuarioState extends State<AjusteUsuario> {
+  late final TextEditingController hostnameController;
+  late final TextEditingController portController;
+  late final UserSettingsCubit cubit;
+  @override
+  void initState() {
+    hostnameController = TextEditingController();
+    portController = TextEditingController();
+    cubit = serviceLocator.get<UserSettingsCubit>();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    hostnameController.dispose();
+    portController.dispose();
+    super.dispose();
+  }
+
   bool isLoading = true;
   @override
   Widget build(BuildContext context) {
@@ -69,7 +88,7 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
                       builder: (context) => const ListadoDesembolso(),
                     ));
               }),
-          SizedBox(
+          const SizedBox(
             width: 15,
           )
         ],
@@ -112,8 +131,9 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.60,
                         height: 47,
-                        child: const TextField(
-                          decoration: InputDecoration(
+                        child: TextField(
+                          controller: hostnameController,
+                          decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             label: Text('e.j  banisoft.dyndns.org'),
                           ),
@@ -143,6 +163,7 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
                         width: MediaQuery.of(context).size.width * 0.30,
                         height: 46.9,
                         child: TextField(
+                          controller: portController,
                           inputFormatters: [maskFormatter],
                           keyboardType: TextInputType.number,
                           decoration: const InputDecoration(
@@ -164,7 +185,8 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
               MaterialButton(
                 minWidth: 200.0,
                 height: 40.0,
-                onPressed: () {},
+                onPressed: () async => cubit.syncData(
+                    hostnameController.text, portController.text),
                 color: Colors.green,
                 child: const Text(
                   'Comprobar Conexion',
