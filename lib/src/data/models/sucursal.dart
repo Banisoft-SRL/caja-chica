@@ -6,45 +6,56 @@ class Sucursal implements IModelFactory<Sucursal> {
   String? nombre;
   String? direccion;
   String? telefono;
-  String? fax;
-  String? codigoAlmacen;
-  String? correo;
-  String? claveCorreo;
 
-  Sucursal(
-      {this.companyId,
-      this.id,
-      this.nombre,
-      this.direccion,
-      this.telefono,
-      this.fax,
-      this.codigoAlmacen,
-      this.correo,
-      this.claveCorreo});
+  int? codigoAlmacen;
+
+  Sucursal({
+    this.companyId,
+    this.id,
+    this.nombre,
+    this.direccion,
+    this.telefono,
+    this.codigoAlmacen,
+  });
 
   Sucursal.fromJson(Map<String, dynamic> json) {
-    companyId = json['CompanyId'];
-    id = json['Id'];
-    nombre = json['Nombre'];
-    direccion = json['Direccion '];
-    telefono = json['Telefono '];
-    fax = json['fax '];
-    codigoAlmacen = json['CodigoAlmacen '];
-    correo = json['Correo '];
-    claveCorreo = json['ClaveCorreo'];
+    companyId = json['companyId'];
+    id = json['id'];
+    nombre = json['nombre'];
+    direccion = json['direccion'];
+    telefono = json['telefono'];
+    codigoAlmacen = json['codigoAlmacen'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['CompanyId'] = this.companyId;
-    data['Id'] = this.id;
-    data['Nombre'] = this.nombre;
-    data['Direccion '] = this.direccion;
-    data['Telefono '] = this.telefono;
-    data['fax '] = this.fax;
-    data['CodigoAlmacen '] = this.codigoAlmacen;
-    data['Correo '] = this.correo;
-    data['ClaveCorreo'] = this.claveCorreo;
+    data['companyId'] = this.companyId;
+    data['id'] = this.id;
+    data['nombre'] = this.nombre;
+    data['direccion'] = this.direccion;
+    data['telefono'] = this.telefono;
+    data['codigoAlmacen'] = this.codigoAlmacen;
+    return data;
+  }
+
+  Sucursal.fromDatabase(Map<String, dynamic> json) {
+    companyId = json['admcia_codigo'];
+    id = json['admsuc_codigo'];
+    nombre = json['admsuc_nombre'];
+    direccion = json['admsuc_direccion'];
+    telefono = json['admsuc_telefono'];
+    codigoAlmacen = json['invalm_codigo'];
+  }
+
+  Map<String, dynamic> toDatabase() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['admcia_codigo'] = this.companyId;
+    data['admsuc_codigo'] = this.id;
+    data['admsuc_nombre'] = this.nombre;
+    data['admsuc_direccion'] = this.direccion;
+    data['admsuc_telefono'] = this.telefono;
+    data['invalm_codigo'] = this.codigoAlmacen;
+
     return data;
   }
 
