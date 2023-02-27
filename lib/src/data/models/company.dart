@@ -12,7 +12,7 @@ class Company implements IModelFactory<Company> {
   String? representanteId;
   String? razonSocial;
   String? selloOficial;
-  int? admciaDespachaco;
+  String? admciaDespachaco;
   String? admciaRpe;
   String? sello1;
   String? sello2;
@@ -46,109 +46,73 @@ class Company implements IModelFactory<Company> {
       this.titulo3,
       this.titulo4});
 
-
   Company.fromJson(Map<String, dynamic> json) {
-    companyId = json['CompanyId '];
-    nombre = json['Nombre '];
-    siglas = json['Siglas '];
-    rnc = json['Rnc '];
-    moneda = json['Moneda '];
-    slogan = json['Slogan '];
-    imagen = json['Imagen '];
-    nombreRepresentante = json['NombreRepresentante '];
-    representanteId = json['RepresentanteId '];
-    razonSocial = json['RazonSocial '];
-    selloOficial = json['SelloOficial '];
-    admciaDespachaco = json['admcia_despachaco '];
-    admciaRpe = json['admcia_rpe '];
-    sello1 = json['Sello1 '];
-    sello2 = json['Sello2 '];
-    sello3 = json['Sello3 '];
-    nombreCodigoBarra = json['NombreCodigoBarra '];
-    titulo1 = json['Titulo1 '];
-    titulo2 = json['Titulo2 '];
-    titulo3 = json['Titulo3 '];
-    titulo4 = json['Titulo4 '];
+    companyId = json['companyId'];
+    nombre = json['nombre'];
+    siglas = json['siglas'];
+    rnc = json['rnc'];
+    moneda = json['moneda'];
+    slogan = json['slogan'];
+    imagen = json['imagen'];
+    nombreRepresentante = json['nombreRepresentante'];
+    representanteId = json['representanteId'];
+    razonSocial = json['razonSocial'];
+    selloOficial = json['selloOficial'];
+    admciaDespachaco = json['admcia_despachaco'];
+    admciaRpe = json['admcia_rpe'];
+    sello1 = json['sello1'];
+    sello2 = json['sello2'];
+    sello3 = json['sello3'];
+    nombreCodigoBarra = json['nombreCodigoBarra'];
+    titulo1 = json['titulo1'];
+    titulo2 = json['titulo2'];
+    titulo3 = json['titulo3'];
+    titulo4 = json['titulo4'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['CompanyId '] = this.companyId;
-    data['Nombre '] = this.nombre;
-    data['Siglas '] = this.siglas;
-    data['Rnc '] = this.rnc;
-    data['Moneda '] = this.moneda;
-    data['Slogan '] = this.slogan;
-    data['Imagen '] = this.imagen;
-    data['NombreRepresentante '] = this.nombreRepresentante;
-    data['RepresentanteId '] = this.representanteId;
-    data['RazonSocial '] = this.razonSocial;
-    data['SelloOficial '] = this.selloOficial;
-    data['admcia_despachaco '] = this.admciaDespachaco;
-    data['admcia_rpe '] = this.admciaRpe;
-    data['Sello1 '] = this.sello1;
-    data['Sello2 '] = this.sello2;
-    data['Sello3 '] = this.sello3;
-    data['NombreCodigoBarra '] = this.nombreCodigoBarra;
-    data['Titulo1 '] = this.titulo1;
-    data['Titulo2 '] = this.titulo2;
-    data['Titulo3 '] = this.titulo3;
-    data['Titulo4 '] = this.titulo4;
+    data['CompanyId'] = this.companyId;
+    data['Nombre'] = this.nombre;
+    data['Siglas'] = this.siglas;
+    data['Rnc'] = this.rnc;
+    data['Moneda'] = this.moneda;
+    data['Slogan'] = this.slogan;
+    data['Imagen'] = this.imagen;
+    data['NombreRepresentante'] = this.nombreRepresentante;
+    data['RepresentanteId'] = this.representanteId;
+    data['RazonSocial'] = this.razonSocial;
+    data['SelloOficial'] = this.selloOficial;
+    data['admcia_despachaco'] = this.admciaDespachaco;
+    data['admcia_rpe'] = this.admciaRpe;
+    data['Sello1'] = this.sello1;
+    data['Sello2'] = this.sello2;
+    data['Sello3'] = this.sello3;
+    data['NombreCodigoBarra'] = this.nombreCodigoBarra;
+    data['Titulo1'] = this.titulo1;
+    data['Titulo2'] = this.titulo2;
+    data['Titulo3'] = this.titulo3;
+    data['Titulo4'] = this.titulo4;
     return data;
   }
 
-
   Company.fromDatabase(Map<String, dynamic> json) {
-    companyId = json['CompanyId '];
-    nombre = json['Nombre '];
-    siglas = json['Siglas '];
-    rnc = json['Rnc '];
-    moneda = json['Moneda '];
-    slogan = json['Slogan '];
-    imagen = json['Imagen '];
-    nombreRepresentante = json['NombreRepresentante '];
-    representanteId = json['RepresentanteId '];
-    razonSocial = json['RazonSocial '];
-    selloOficial = json['SelloOficial '];
-    admciaDespachaco = json['admcia_despachaco '];
-    admciaRpe = json['admcia_rpe '];
-    sello1 = json['Sello1 '];
-    sello2 = json['Sello2 '];
-    sello3 = json['Sello3 '];
-    nombreCodigoBarra = json['NombreCodigoBarra '];
-    titulo1 = json['Titulo1 '];
-    titulo2 = json['Titulo2 '];
-    titulo3 = json['Titulo3 '];
-    titulo4 = json['Titulo4 '];
+    companyId = json['admcia_codigo'];
+    nombre = json['admcia_nombre'];
+    siglas = json['admcia_siglas'];
+    rnc = json['admcia_rnc'];
+    moneda = json['admmon_codigo'];
   }
 
   Map<String, dynamic> toDatabase() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['CompanyId '] = this.companyId;
-    data['Nombre '] = this.nombre;
-    data['Siglas '] = this.siglas;
-    data['Rnc '] = this.rnc;
-    data['Moneda '] = this.moneda;
-    data['Slogan '] = this.slogan;
-    data['Imagen '] = this.imagen;
-    data['NombreRepresentante '] = this.nombreRepresentante;
-    data['RepresentanteId '] = this.representanteId;
-    data['RazonSocial '] = this.razonSocial;
-    data['SelloOficial '] = this.selloOficial;
-    data['admcia_despachaco '] = this.admciaDespachaco;
-    data['admcia_rpe '] = this.admciaRpe;
-    data['Sello1 '] = this.sello1;
-    data['Sello2 '] = this.sello2;
-    data['Sello3 '] = this.sello3;
-    data['NombreCodigoBarra '] = this.nombreCodigoBarra;
-    data['Titulo1 '] = this.titulo1;
-    data['Titulo2 '] = this.titulo2;
-    data['Titulo3 '] = this.titulo3;
-    data['Titulo4 '] = this.titulo4;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['admcia_codigo'] = this.companyId;
+    data['admcia_nombre'] = this.nombre;
+    data['admcia_siglas'] = this.siglas;
+    data['admcia_rnc'] = this.rnc;
+    data['admmon_codigo'] = this.moneda;
     return data;
   }
-
-
 
   @override
   Company fromJsonModel(Map<String, dynamic> json) => Company.fromJson(json);

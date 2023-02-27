@@ -56,7 +56,7 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
 
       //save to db
       sucursales.data?.forEach((element) async {
-        await _db.insert(table: "madmsuc", data: element.toJson());
+        await _db.insert(table: "madmsuc", data: element.toDatabase());
       });
 
       return sucursales.data ?? [];
@@ -73,7 +73,7 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
 
       //save to db
       companies.data?.forEach((element) async {
-        await _db.insert(table: "madmcia", data: element.toJson());
+        await _db.insert(table: "madmcia", data: element.toDatabase());
       });
 
       return companies.data ?? [];
