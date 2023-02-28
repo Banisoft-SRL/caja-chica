@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:caja_chica/src/core/interfaces/iapi_client.dart';
-import 'package:caja_chica/src/data/models/cajca_chica.dart';
+import 'package:caja_chica/src/data/models/caja_chica.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
