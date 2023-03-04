@@ -7,7 +7,7 @@ class LoginState extends Equatable {
   final String? message;
   final bool? isPasswordVisible;
   final bool? isRememberMe;
-
+  
   const LoginState({
     this.status = LoginStatus.initial,
     this.message,

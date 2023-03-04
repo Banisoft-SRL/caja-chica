@@ -1,3 +1,4 @@
+import 'package:caja_chica/src/data/models/cuenta_banco.dart';
 import 'package:caja_chica/src/data/models/models.dart';
 import '../../core/interfaces/imodel_factory.dart';
 
@@ -9,6 +10,10 @@ class ModelFactory {
     "List<$Sucursal>": Sucursal(),
     "$Company": Company(),
     "List<$Company>": Company(),
+    "$User": User(),
+    "List<$User>": User(),
+    "$CuentaBanco": CuentaBanco(),
+    "List<$CuentaBanco>": CuentaBanco(),
   };
 
   static IModelFactory createModel(String type) {

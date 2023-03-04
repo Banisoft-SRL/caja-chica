@@ -13,8 +13,6 @@ class ListadoDesembolso extends StatefulWidget {
 class _ListadoDesembolsoState extends State<ListadoDesembolso> {
   bool isScrolled = true;
 
-  //Configuracion del botton de fecha
-
   DateTimeRange? _selectedDateRange;
   void _show() async {
     final DateTimeRange? result = await showDateRangePicker(
@@ -41,7 +39,7 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
       top: false,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.white,
           elevation: 0,
           title: const Text('Desembolsos'),
           centerTitle: false,
@@ -56,8 +54,10 @@ class _ListadoDesembolsoState extends State<ListadoDesembolso> {
             ),
             IconButton(
                 onPressed: () async {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => AjusteUsuario()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AjusteUsuario()));
                 },
                 icon: const Icon(Icons.settings)),
 

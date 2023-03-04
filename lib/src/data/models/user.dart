@@ -7,17 +7,17 @@ class User implements IModelFactory<User> {
   int? codigoCompania;
   int? codigoSucursal;
   int? codigoEstado;
-  int? comision;
+  double? comision;
   int? porcentajeModificacionMinimo;
   int? porcentajeDescuento;
-  int? porcentajeDescuentoTotal;
+  double? porcentajeDescuentoTotal;
   int? codigoFacturacion;
   String? esCajero;
   int? idCajero;
   int? porcentajeDescuentoRecargo;
-  int? porcentajeDescuentoRecargoTotal;
+  double? porcentajeDescuentoRecargoTotal;
   int? permitirSalidaInventario;
-  int? montoDescuento;
+  double? montoDescuento;
   String? codigoSeguridad;
   int? codigoProveedor;
   int? esAdmin;
@@ -26,12 +26,12 @@ class User implements IModelFactory<User> {
   int? manejaInformacionVentas;
   int? generaBackup;
   int? generaNotas;
-  Null? esAdmin2;
+  bool? esAdmin2;
   int? limiteCredito;
   int? documentosVencidos;
   int? condicionPago;
   int? noVisualizaFactura;
-  Null? nombrePrograma;
+  bool? nombrePrograma;
   int? facturaCosto;
   int? manejaAlertasCXC;
   String? codigoCuentaBancaria;
@@ -82,14 +82,15 @@ class User implements IModelFactory<User> {
     comision = json['comision'];
     porcentajeModificacionMinimo = json['porcentajeModificacionMinimo'];
     porcentajeDescuento = json['porcentajeDescuento'];
-    porcentajeDescuentoTotal = json['porcentajeDescuentoTotal'];
+    porcentajeDescuentoTotal =
+        double.tryParse(json['porcentajeDescuentoTotal'].toString());
     codigoFacturacion = json['codigoFacturacion'];
     esCajero = json['esCajero'];
     idCajero = json['idCajero'];
     porcentajeDescuentoRecargo = json['porcentajeDescuentoRecargo'];
     porcentajeDescuentoRecargoTotal = json['porcentajeDescuentoRecargoTotal'];
     permitirSalidaInventario = json['permitirSalidaInventario'];
-    montoDescuento = json['montoDescuento'];
+    montoDescuento = double.tryParse(json['montoDescuento'].toString());
     codigoSeguridad = json['codigoSeguridad'];
     codigoProveedor = json['codigoProveedor'];
     esAdmin = json['esAdmin'];
@@ -110,7 +111,7 @@ class User implements IModelFactory<User> {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['codigo'] = this.codigo;
     data['nombre'] = this.nombre;
     data['password'] = this.password;
@@ -146,6 +147,81 @@ class User implements IModelFactory<User> {
     data['facturaCosto'] = this.facturaCosto;
     data['manejaAlertasCXC'] = this.manejaAlertasCXC;
     data['codigoCuentaBancaria'] = this.codigoCuentaBancaria;
+    return data;
+  }
+
+  User.fromDatabase(Map<String, dynamic> data) {
+    codigo = data['admusr_codigo'];
+    nombre = data['admusr_nombre'];
+    password = data['admusr_password'];
+    codigoCompania =
+        data['admcia_codigo'] = codigoSucursal = data['admsuc_codigo'];
+    codigoEstado = data['admsts_codigo'];
+    comision = data['admusr_comision'];
+    porcentajeModificacionMinimo = data['admusr_permodmin'];
+    porcentajeDescuento = data['admusr_perdesc'];
+    porcentajeDescuentoTotal = data['admusr_pordesc'];
+    codigoFacturacion = data['admusr_codfac'];
+    esCajero = data['admusr_cajero'];
+    idCajero = data['admusr_idcajero'];
+    porcentajeDescuentoRecargo = data['admusr_perDescRec'];
+    permitirSalidaInventario = data['admusr_permitirsalidainv'];
+    montoDescuento = data['admusr_montodesc'];
+    codigoSeguridad = data['admusr_codseg'];
+    codigoProveedor = data['facvdr_codigo'];
+    esAdmin = data['admusr_admin'];
+    codigoTurnoCaja = data['cajtur_codigo'];
+    foto = data['admusr_foto'];
+    manejaInformacionVentas = data['admusr_manejaInfoVentas'];
+    generaBackup = data['admusr_generabk'];
+    generaNotas = data['admusr_generanotas'];
+    esAdmin2 = data['admusr_admin2'];
+    limiteCredito = data['admusr_limitecredito'];
+    documentosVencidos = data['admusr_documentosvencidos'];
+    condicionPago = data['admusr_condicionpago'];
+    noVisualizaFactura = data['admusr_noVisualizaFactura'];
+    nombrePrograma = data['prgprg_nombre'];
+    facturaCosto = data['admusr_facturacosto'];
+    manejaAlertasCXC = data['admusr_manejaAlertasCXC'];
+    codigoCuentaBancaria = data['eftctb_codigo'];
+  }
+
+  Map<String, dynamic> toDatabase() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['admusr_codigo'] = this.codigo;
+    data['admusr_nombre'] = this.nombre;
+    data['admusr_password'] = this.password;
+    data['admcia_codigo'] = this.codigoCompania;
+    data['admsuc_codigo'] = this.codigoSucursal;
+    data['admsts_codigo'] = this.codigoEstado;
+    data['admusr_comision'] = this.comision;
+    data['admusr_permodmin'] = this.porcentajeModificacionMinimo;
+    data['admusr_perdesc'] = this.porcentajeDescuento;
+    data['admusr_pordesc'] = this.porcentajeDescuentoTotal;
+    data['admusr_codfac'] = this.codigoFacturacion;
+    data['admusr_cajero'] = this.esCajero;
+    data['admusr_idcajero'] = this.idCajero;
+    data['admusr_perDescRec'] = this.porcentajeDescuentoRecargo;
+    data['admusr_permitirsalidainv'] = this.permitirSalidaInventario;
+    data['admusr_montodesc'] = this.montoDescuento;
+    data['admusr_codseg'] = this.codigoSeguridad;
+    data['facvdr_codigo'] = this.codigoProveedor;
+    data['admusr_admin'] = this.esAdmin;
+    data['cajtur_codigo'] = this.codigoTurnoCaja;
+    data['admusr_foto'] = this.foto;
+    data['admusr_manejaInfoVentas'] = this.manejaInformacionVentas;
+    data['admusr_generabk'] = this.generaBackup;
+    data['admusr_generanotas'] = this.generaNotas;
+    data['admusr_admin2'] = this.esAdmin2;
+    data['admusr_limitecredito'] = this.limiteCredito;
+    data['admusr_documentosvencidos'] = this.documentosVencidos;
+    data['admusr_condicionpago'] = this.condicionPago;
+    data['admusr_noVisualizaFactura'] = this.noVisualizaFactura;
+    data['prgprg_nombre'] = this.nombrePrograma;
+    data['admusr_facturacosto'] = this.facturaCosto;
+    data['admusr_manejaAlertasCXC'] = this.manejaAlertasCXC;
+    data['eftctb_codigo'] = this.codigoCuentaBancaria;
+
     return data;
   }
 

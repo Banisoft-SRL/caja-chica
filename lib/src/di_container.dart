@@ -19,8 +19,12 @@ Future<void> setupServiceLocator() async {
   serviceLocator.registerLazySingleton(() => SqliteDatabaseImp.instance);
 
   // Blocs Registration
-  serviceLocator
-      .registerLazySingleton(() => LoginCubit(apiClient: serviceLocator()));
-  serviceLocator.registerLazySingleton(() =>
-      UserSettingsCubit(apiClient: serviceLocator(), db: serviceLocator()));
+  serviceLocator.registerLazySingleton(() => LoginCubit(
+      apiClient: serviceLocator(),
+      cacheService: serviceLocator(),
+      database: serviceLocator()));
+  serviceLocator.registerLazySingleton(() => UserSettingsCubit(
+      apiClient: serviceLocator(),
+      db: serviceLocator(),
+      cacheService: serviceLocator()));
 }

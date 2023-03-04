@@ -1,6 +1,8 @@
 import 'package:caja_chica/src/UI/blocs/login/login_cubit.dart';
 import 'package:caja_chica/src/UI/pages/Desembolsos.dart';
 import 'package:caja_chica/src/UI/widgets/Detalles_de_Desembolsos.dart';
+import 'package:caja_chica/src/UI/widgets/error_dialog.dart';
+import 'package:caja_chica/src/UI/widgets/loading_dialog.dart';
 import 'package:caja_chica/src/di_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,10 +16,21 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   late final LoginCubit cubit;
+  late final TextEditingController _userController;
+  late final TextEditingController _passwordController;
   @override
   void initState() {
     cubit = serviceLocator.get<LoginCubit>();
+    _userController = TextEditingController();
+    _passwordController = TextEditingController();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _userController.dispose();
+    _passwordController.dispose();
+    super.dispose();
   }
 
   @override
@@ -25,21 +38,25 @@ class _LoginPageState extends State<LoginPage> {
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
         state.when(
-          initial: () {},
-          loading: () => ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Cargando...'),
-              backgroundColor: Colors.blueGrey,
-            ),
-          ),
-          success: () => ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Success...'),
-              backgroundColor: Colors.blueGrey,
-            ),
-          ),
-          error: () {},
-        );
+            initial: () {},
+            loading: () => showDialog(
+                context: context,
+                builder: (_) =>
+                    const LoadingDialog(title: 'Validando usuario...')),
+            success: () => Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (_) => const ListadoDesembolso(),
+                  ),
+                ),
+            error: () {
+              Navigator.of(context).pop();
+              return showDialog(
+                  context: context,
+                  builder: (_) => const ErrorDialog(
+                        title: 'Error',
+                        message: 'Usuario o contraseña incorrectos',
+                      ));
+            });
       },
       child: Scaffold(
         bottomNavigationBar: Container(
@@ -96,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       const Text(
-                        'Welcome to the Caja Chica App',
+                        'Welcome back!',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16),
                       ),
@@ -104,6 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: 18,
                       ),
                       TextFormField(
+                        controller: _userController,
                         decoration: const InputDecoration(
                             icon: Icon(Icons.account_circle_rounded),
                             labelText: 'USERNAME'),
@@ -112,6 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: 40,
                       ),
                       TextFormField(
+                        controller: _passwordController,
                         decoration: const InputDecoration(
                             icon: Icon(Icons.lock),
                             labelText: 'PASSWORD',
@@ -124,28 +143,19 @@ class _LoginPageState extends State<LoginPage> {
                       const SizedBox(
                         height: 43,
                       ),
-                      MaterialButton(
-                        onPressed: () async {
-                          await cubit.login("dgarcia", "65");
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const ListadoDesembolso(),
-                              ));
-                        },
-                        padding: const EdgeInsets.symmetric(vertical: 15),
-                        color: Colors.black,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const <Widget>[
-                            Text(
-                              'LOGIN',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 18),
-                            ),
-                          ],
-                        ),
-                      ),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                            minimumSize: const Size(double.infinity, 50),
+                          ),
+                          onPressed: () async {
+                            await cubit.login(
+                                username: _userController.text,
+                                password: _passwordController.text);
+                          },
+                          child: const Text("Login",
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 18))),
                     ],
                   ),
                 ),

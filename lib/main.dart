@@ -31,9 +31,10 @@ class CajaChicaApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
         title: 'Caja Chica',
         debugShowCheckedModeBanner: false,
-        home: LoginPage());
+        theme: Theme.of(context).copyWith(useMaterial3: true),
+        home: const LoginPage());
   }
 }
