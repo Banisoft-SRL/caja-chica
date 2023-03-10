@@ -28,13 +28,13 @@ class Sucursal implements IModelFactory<Sucursal> {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['companyId'] = this.companyId;
-    data['id'] = this.id;
-    data['nombre'] = this.nombre;
-    data['direccion'] = this.direccion;
-    data['telefono'] = this.telefono;
-    data['codigoAlmacen'] = this.codigoAlmacen;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['companyId'] = companyId;
+    data['id'] = id;
+    data['nombre'] = nombre;
+    data['direccion'] = direccion;
+    data['telefono'] = telefono;
+    data['codigoAlmacen'] = codigoAlmacen;
     return data;
   }
 
@@ -49,12 +49,12 @@ class Sucursal implements IModelFactory<Sucursal> {
 
   Map<String, dynamic> toDatabase() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['admcia_codigo'] = this.companyId;
-    data['admsuc_codigo'] = this.id;
-    data['admsuc_nombre'] = this.nombre;
-    data['admsuc_direccion'] = this.direccion;
-    data['admsuc_telefono'] = this.telefono;
-    data['invalm_codigo'] = this.codigoAlmacen;
+    data['admcia_codigo'] = companyId;
+    data['admsuc_codigo'] = id;
+    data['admsuc_nombre'] = nombre;
+    data['admsuc_direccion'] = direccion;
+    data['admsuc_telefono'] = telefono;
+    data['invalm_codigo'] = codigoAlmacen;
 
     return data;
   }

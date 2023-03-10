@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bloc/bloc.dart';
 import 'package:caja_chica/src/core/interfaces/iapi_client.dart';
 import 'package:caja_chica/src/core/interfaces/icache_service.dart';
@@ -25,6 +27,7 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
   final IAPiClient _apiClient;
   final SqliteDatabaseImp _db;
   final ICacheService _cacheService;
+
   Future<void> getCompanies(String? srvAddress, String? srvPort) async {
     emit(state.copyWith(status: UserSettingStatus.loading));
     late final List<Company> companies;
@@ -41,11 +44,12 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
     } catch (e) {
       emit(state.copyWith(
           status: UserSettingStatus.error, message: e.toString()));
+
       return;
     }
 
-    emit(state.copyWith(
-        status: UserSettingStatus.success, companies: companies));
+    emit(
+        state.copyWith(status: UserSettingStatus.loaded, companies: companies));
 
     state.toString();
   }
@@ -173,6 +177,18 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
       return users.data ?? [];
     } catch (_) {
       return [];
+    }
+  }
+
+  Future<void> saveStateToCache() async {
+    await _cacheService.put(userSettingsState, json.encode(state.toJson()));
+  }
+
+  Future<void> loadStateFromCache() async {
+    final stateJson = await _cacheService.get<String>(userSettingsState);
+    if (stateJson != null) {
+      final state = UserSettingsState.fromJson(json.decode(stateJson));
+      emit(state);
     }
   }
 }

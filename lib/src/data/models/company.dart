@@ -71,28 +71,28 @@ class Company implements IModelFactory<Company> {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['CompanyId'] = this.companyId;
-    data['Nombre'] = this.nombre;
-    data['Siglas'] = this.siglas;
-    data['Rnc'] = this.rnc;
-    data['Moneda'] = this.moneda;
-    data['Slogan'] = this.slogan;
-    data['Imagen'] = this.imagen;
-    data['NombreRepresentante'] = this.nombreRepresentante;
-    data['RepresentanteId'] = this.representanteId;
-    data['RazonSocial'] = this.razonSocial;
-    data['SelloOficial'] = this.selloOficial;
-    data['admcia_despachaco'] = this.admciaDespachaco;
-    data['admcia_rpe'] = this.admciaRpe;
-    data['Sello1'] = this.sello1;
-    data['Sello2'] = this.sello2;
-    data['Sello3'] = this.sello3;
-    data['NombreCodigoBarra'] = this.nombreCodigoBarra;
-    data['Titulo1'] = this.titulo1;
-    data['Titulo2'] = this.titulo2;
-    data['Titulo3'] = this.titulo3;
-    data['Titulo4'] = this.titulo4;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['companyId'] = companyId;
+    data['nombre'] = nombre;
+    data['siglas'] = siglas;
+    data['rnc'] = rnc;
+    data['moneda'] = moneda;
+    data['slogan'] = slogan;
+    data['imagen'] = imagen;
+    data['nombreRepresentante'] = nombreRepresentante;
+    data['representanteId'] = representanteId;
+    data['razonSocial'] = razonSocial;
+    data['selloOficial'] = selloOficial;
+    data['admcia_despachaco'] = admciaDespachaco;
+    data['admcia_rpe'] = admciaRpe;
+    data['sello1'] = sello1;
+    data['sello2'] = sello2;
+    data['sello3'] = sello3;
+    data['nombreCodigoBarra'] = nombreCodigoBarra;
+    data['titulo1'] = titulo1;
+    data['titulo2'] = titulo2;
+    data['titulo3'] = titulo3;
+    data['titulo4'] = titulo4;
     return data;
   }
 
@@ -106,11 +106,11 @@ class Company implements IModelFactory<Company> {
 
   Map<String, dynamic> toDatabase() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['admcia_codigo'] = this.companyId;
-    data['admcia_nombre'] = this.nombre;
-    data['admcia_siglas'] = this.siglas;
-    data['admcia_rnc'] = this.rnc;
-    data['admmon_codigo'] = this.moneda;
+    data['admcia_codigo'] = companyId;
+    data['admcia_nombre'] = nombre;
+    data['admcia_siglas'] = siglas;
+    data['admcia_rnc'] = rnc;
+    data['admmon_codigo'] = moneda;
     return data;
   }
 

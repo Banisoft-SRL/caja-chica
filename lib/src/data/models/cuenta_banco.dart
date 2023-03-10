@@ -61,24 +61,24 @@ class CuentaBanco implements IModelFactory<CuentaBanco> {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['companiaCodigo'] = this.companiaCodigo;
-    data['sucursalCodigo'] = this.sucursalCodigo;
-    data['codigo'] = this.codigo;
-    data['nombre'] = this.nombre;
-    data['numCuentaBanco'] = this.numCuentaBanco;
-    data['codigoBanco'] = this.codigoBanco;
-    data['nombreOficialCuenta'] = this.nombreOficialCuenta;
-    data['moneda'] = this.moneda;
-    data['balance'] = this.balance;
-    data['cuentaContable'] = this.cuentaContable;
-    data['estado'] = this.estado;
-    data['formatoCheque'] = this.formatoCheque;
-    data['esCajaChica'] = this.esCajaChica;
-    data['numReporte'] = this.numReporte;
-    data['codigoNomina'] = this.codigoNomina;
-    data['cuentaDeposito'] = this.cuentaDeposito;
-    data['archivoNomina'] = this.archivoNomina;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['companiaCodigo'] = companiaCodigo;
+    data['sucursalCodigo'] = sucursalCodigo;
+    data['codigo'] = codigo;
+    data['nombre'] = nombre;
+    data['numCuentaBanco'] = numCuentaBanco;
+    data['codigoBanco'] = codigoBanco;
+    data['nombreOficialCuenta'] = nombreOficialCuenta;
+    data['moneda'] = moneda;
+    data['balance'] = balance;
+    data['cuentaContable'] = cuentaContable;
+    data['estado'] = estado;
+    data['formatoCheque'] = formatoCheque;
+    data['esCajaChica'] = esCajaChica;
+    data['numReporte'] = numReporte;
+    data['codigoNomina'] = codigoNomina;
+    data['cuentaDeposito'] = cuentaDeposito;
+    data['archivoNomina'] = archivoNomina;
     return data;
   }
 

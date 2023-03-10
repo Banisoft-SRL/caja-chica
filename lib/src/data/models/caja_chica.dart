@@ -89,34 +89,34 @@ class CajaChica extends IModelFactory<CajaChica> {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['Id'] = this.id;
-    data['CompaniaCodigo'] = this.companiaCodigo;
-    data['SucursalCodigo'] = this.sucursalCodigo;
-    data['Fecha'] = this.fecha;
-    data['FechaDocumento'] = this.fechaDocumento;
-    data['NumeroDocumento'] = this.numeroDocumento;
-    data['CuentaBancaria'] = this.cuentaBancaria;
-    data['FormaPagoCodigo'] = this.formaPagoCodigo;
-    data['TipoTransaccionCodigo'] = this.tipoTransaccionCodigo;
-    data['MonedaCodigo'] = this.monedaCodigo;
-    data['Origen'] = this.origen;
-    data['Modulo'] = this.modulo;
-    data['RncSuplidor'] = this.rncSuplidor;
-    data['NombreSuplidor'] = this.nombreSuplidor;
-    data['NcfNumero'] = this.ncfNumero;
-    data['BeneficiarioId'] = this.beneficiarioId;
-    data['NombreBeneficiario'] = this.nombreBeneficiario;
-    data['Referencia'] = this.referencia;
-    data['Descripcion'] = this.descripcion;
-    data['Moneda'] = this.moneda;
-    data['Tasa'] = this.tasa;
-    data['ValorDesembolso'] = this.valorDesembolso;
-    data['TotalImp'] = this.totalImp;
-    data['Master'] = this.master;
-    data['EntradaDiario'] = this.entradaDiario;
-    data['Estado'] = this.estado;
-    data['ConceptoGasto'] = this.conceptoGasto;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['Id'] = id;
+    data['CompaniaCodigo'] = companiaCodigo;
+    data['SucursalCodigo'] = sucursalCodigo;
+    data['Fecha'] = fecha;
+    data['FechaDocumento'] = fechaDocumento;
+    data['NumeroDocumento'] = numeroDocumento;
+    data['CuentaBancaria'] = cuentaBancaria;
+    data['FormaPagoCodigo'] = formaPagoCodigo;
+    data['TipoTransaccionCodigo'] = tipoTransaccionCodigo;
+    data['MonedaCodigo'] = monedaCodigo;
+    data['Origen'] = origen;
+    data['Modulo'] = modulo;
+    data['RncSuplidor'] = rncSuplidor;
+    data['NombreSuplidor'] = nombreSuplidor;
+    data['NcfNumero'] = ncfNumero;
+    data['BeneficiarioId'] = beneficiarioId;
+    data['NombreBeneficiario'] = nombreBeneficiario;
+    data['Referencia'] = referencia;
+    data['Descripcion'] = descripcion;
+    data['Moneda'] = moneda;
+    data['Tasa'] = tasa;
+    data['ValorDesembolso'] = valorDesembolso;
+    data['TotalImp'] = totalImp;
+    data['Master'] = master;
+    data['EntradaDiario'] = entradaDiario;
+    data['Estado'] = estado;
+    data['ConceptoGasto'] = conceptoGasto;
     return data;
   }
 

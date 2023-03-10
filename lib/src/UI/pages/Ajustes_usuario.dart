@@ -1,10 +1,13 @@
 import 'package:caja_chica/src/UI/blocs/user_settings/user_settings_cubit.dart';
 import 'package:caja_chica/src/UI/pages/Desembolsos.dart';
+import 'package:caja_chica/src/UI/widgets/loading_dialog.dart';
 import 'package:caja_chica/src/data/models/company.dart';
 import 'package:caja_chica/src/di_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+
+import '../widgets/widgets.dart';
 
 class AjusteUsuario extends StatefulWidget {
   const AjusteUsuario({Key? key}) : super(key: key);
@@ -22,6 +25,7 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
     hostnameController = TextEditingController();
     portController = TextEditingController();
     cubit = serviceLocator.get<UserSettingsCubit>();
+    cubit.loadStateFromCache();
     super.initState();
   }
 
@@ -80,11 +84,7 @@ class _AjusteUsuarioState extends State<AjusteUsuario> {
                 color: Colors.black,
               ),
               onPressed: () async {
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ListadoDesembolso(),
-                    ));
+                cubit.saveStateToCache();
               }),
           const SizedBox(
             width: 15,
@@ -227,197 +227,114 @@ class _SettingsFields extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<UserSettingsCubit, UserSettingsState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.when(
+          initial: () {},
+          success: (_, __, ___, ____) {},
+          loading: () => showDialog(
+              context: context,
+              builder: (context) => const LoadingDialog(title: "Cargando...")),
+          loaded: () => Navigator.pop(context),
+          error: (message) {
+            if (ModalRoute.of(context)?.isActive ?? false) {
+              Navigator.pop(context);
+            }
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(message!),
+                backgroundColor: Colors.red,
+              ),
+            );
+          },
+        );
+      },
       builder: (context, state) {
         return Column(
           children: [
             const SizedBox(
               height: 10,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.corporate_fare),
-                Text(" Compañia"),
-                Text(
-                  ' (Requerido*)',
-                  style: TextStyle(color: Color.fromRGBO(251, 59, 59, 600)),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.90,
-              child: InputDecorator(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            Padding(
+              padding: const EdgeInsets.only(left: 25),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Icon(Icons.corporate_fare),
+                  Text(" Compañia"),
+                  Text(
+                    ' (Requerido*)',
+                    style: TextStyle(color: Color.fromRGBO(251, 59, 59, 600)),
                   ),
-                ),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton(
-                    isExpanded: true,
-                    isDense: true,
-                    value: state.companies.isNotEmpty
-                        ? state.companies.first.companyId
-                        : 0,
-                    items: state.companies.map((company) {
-                      return DropdownMenuItem(
-                        value: company.companyId,
-                        child: Text('${company.nombre}'),
-                      );
-                    }).toList(),
-                    onChanged: (value) {
-                      if (value != null) {
-                        context
-                            .read<UserSettingsCubit>()
-                            .onCompanySelected(value);
-                      }
-                    },
-                  ),
-                ),
+                ],
               ),
             ),
             const SizedBox(
               height: 10,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.account_tree_outlined),
-                Text("  Sucursal"),
-                Text(
-                  ' (Requerido*)',
-                  style: TextStyle(color: Color.fromRGBO(251, 59, 59, 600)),
-                ),
-              ],
-            ),
+            DropdownCompany(state: state),
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.90,
-              child: InputDecorator(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            Padding(
+              padding: const EdgeInsets.only(left: 25),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Icon(Icons.account_tree_outlined),
+                  Text("  Sucursal"),
+                  Text(
+                    ' (Requerido*)',
+                    style: TextStyle(color: Color.fromRGBO(251, 59, 59, 600)),
                   ),
-                ),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton(
-                    isExpanded: true,
-                    isDense: true,
-                    value: state.sucursales.isNotEmpty
-                        ? state.sucursales.first.companyId
-                        : 0,
-                    items: state.sucursales.map((sucursal) {
-                      return DropdownMenuItem(
-                        value: sucursal.id,
-                        child: Text('${sucursal.nombre}'),
-                      );
-                    }).toList(),
-                    onChanged: (sucursalId) {
-                      if (sucursalId != null) {
-                        context
-                            .read<UserSettingsCubit>()
-                            .onSucursalSelected(sucursalId);
-                      }
-                    },
-                  ),
-                ),
+                ],
               ),
             ),
             const SizedBox(
               height: 10,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.supervised_user_circle),
-                Text("  Usuario"),
-                Text(
-                  ' (Requerido*)',
-                  style: TextStyle(color: Color.fromRGBO(251, 59, 59, 600)),
-                ),
-              ],
-            ),
+            DropdownSucursales(state: state),
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.90,
-              child: InputDecorator(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            Padding(
+              padding: const EdgeInsets.only(left: 25),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Icon(Icons.supervised_user_circle),
+                  Text("  Usuario"),
+                  Text(
+                    ' (Requerido*)',
+                    style: TextStyle(color: Color.fromRGBO(251, 59, 59, 600)),
                   ),
-                ),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton(
-                    isExpanded: true,
-                    isDense: true,
-                    value: state.users.isNotEmpty ? state.users.first : null,
-                    items: state.users.map((user) {
-                      return DropdownMenuItem(
-                        value: user,
-                        child: Text('${user.nombre}'),
-                      );
-                    }).toList(),
-                    onChanged: (user) {
-                      if (user != null) {
-                        context.read<UserSettingsCubit>().onUserSelected(
-                            user.codigoCompania!, user.codigoCuentaBancaria!);
-                      }
-                    },
-                  ),
-                ),
+                ],
               ),
             ),
             const SizedBox(
               height: 10,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.monetization_on_outlined),
-                Text("  Cuenta Bancaria"),
-                Text(
-                  ' (Requerido*)',
-                  style: TextStyle(color: Color.fromRGBO(251, 59, 59, 600)),
-                ),
-              ],
+            UsersDropdown(state: state),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 25),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Icon(Icons.monetization_on_outlined),
+                  Text("  Cuenta Bancaria"),
+                  Text(
+                    ' (Requerido*)',
+                    style: TextStyle(color: Color.fromRGBO(251, 59, 59, 600)),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(
               height: 7,
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.90,
-              child: InputDecorator(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  ),
-                ),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton(
-                    isExpanded: true,
-                    isDense: true,
-                    value: state.cuentaBanco.isNotEmpty
-                        ? state.cuentaBanco.first.codigo
-                        : 0,
-                    items: state.cuentaBanco.map((cuentaBanco) {
-                      return DropdownMenuItem(
-                        value: cuentaBanco.codigo,
-                        child: Text('${cuentaBanco.nombre}'),
-                      );
-                    }).toList(),
-                    onChanged: null,
-                  ),
-                ),
-              ),
-            ),
+            DropdownCuentaBancaria(state: state),
           ],
         );
       },
