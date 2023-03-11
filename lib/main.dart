@@ -1,3 +1,4 @@
+import 'package:caja_chica/src/UI/blocs/crear_desembolso/crear_desembolso_bloc.dart';
 import 'package:caja_chica/src/UI/blocs/login/login_cubit.dart';
 import 'package:caja_chica/src/UI/blocs/user_settings/user_settings_cubit.dart';
 import 'package:caja_chica/src/UI/pages/Login.dart';
@@ -20,6 +21,9 @@ Future<void> main() async {
       ),
       BlocProvider(
         create: (context) => serviceLocator.get<UserSettingsCubit>(),
+      ),
+      BlocProvider(
+        create: (context) => serviceLocator.get<CrearDesembolsoBloc>(),
       ),
     ],
     child: const CajaChicaApp(),

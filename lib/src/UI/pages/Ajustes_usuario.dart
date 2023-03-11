@@ -234,7 +234,15 @@ class _SettingsFields extends StatelessWidget {
           loading: () => showDialog(
               context: context,
               builder: (context) => const LoadingDialog(title: "Cargando...")),
-          loaded: () => Navigator.pop(context),
+          loaded: () {
+            Navigator.pop(context);
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text("Cargado Correctamente"),
+                backgroundColor: Colors.green,
+              ),
+            );
+          },
           error: (message) {
             if (ModalRoute.of(context)?.isActive ?? false) {
               Navigator.pop(context);

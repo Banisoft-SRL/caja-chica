@@ -1,14 +1,29 @@
+import 'package:caja_chica/src/UI/blocs/crear_desembolso/crear_desembolso_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class CrearDesembolso extends StatelessWidget {
+import '../widgets/widgets.dart';
+
+class CrearDesembolso extends StatefulWidget {
   const CrearDesembolso({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    var maskFormatter = MaskTextInputFormatter(
-        mask: '###-#####-#', filter: {"#": RegExp(r'[0-9]')});
+  State<CrearDesembolso> createState() => _CrearDesembolsoState();
+}
 
+class _CrearDesembolsoState extends State<CrearDesembolso> {
+  late final TextEditingController _beneficiarioController;
+  late final CrearDesembolsoBloc _crearDesembolsoBloc;
+  @override
+  void initState() {
+    _crearDesembolsoBloc = context.read<CrearDesembolsoBloc>();
+    _beneficiarioController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     var Formatter = MaskTextInputFormatter(
         mask: 'B## ########', filter: {"#": RegExp(r'[0-9]')});
 
@@ -85,27 +100,8 @@ class CrearDesembolso extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    label: Text('Beneficiario'),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                  inputFormatters: [maskFormatter],
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    label: Text('RNC'),
-                    prefixIcon: Icon(Icons.perm_identity_sharp),
-                  ),
-                ),
-              ),
+              BeneficiarioInput(crearDesembolsoBloc: _crearDesembolsoBloc),
+              RncInput(crearDesembolsoBloc: _crearDesembolsoBloc),
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: TextField(
@@ -233,7 +229,7 @@ class CrearDesembolso extends StatelessWidget {
               ),
               FloatingActionButton.extended(
                   onPressed: () => Navigator.pop(context),
-                  label: const Text('      Guardar      '),
+                  label: const Text('Guardar'),
                   backgroundColor: Colors.black),
             ],
           ),

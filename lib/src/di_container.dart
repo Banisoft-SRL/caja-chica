@@ -1,3 +1,4 @@
+import 'package:caja_chica/src/UI/blocs/crear_desembolso/crear_desembolso_bloc.dart';
 import 'package:caja_chica/src/UI/blocs/user_settings/user_settings_cubit.dart';
 import 'package:caja_chica/src/core/interfaces/iapi_client.dart';
 import 'package:caja_chica/src/core/interfaces/icache_service.dart';
@@ -18,7 +19,7 @@ Future<void> setupServiceLocator() async {
   serviceLocator.registerLazySingleton<IAPiClient>(() => ApiClient());
   serviceLocator.registerLazySingleton(() => SqliteDatabaseImp.instance);
 
-  // Blocs Registration
+  // Blocs/Cubits Registration
   serviceLocator.registerLazySingleton(() => LoginCubit(
       apiClient: serviceLocator(),
       cacheService: serviceLocator(),
@@ -27,4 +28,5 @@ Future<void> setupServiceLocator() async {
       apiClient: serviceLocator(),
       db: serviceLocator(),
       cacheService: serviceLocator()));
+  serviceLocator.registerLazySingleton(() => CrearDesembolsoBloc());
 }
